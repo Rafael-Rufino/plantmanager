@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import { Welcome } from "./src/pages/Welcome";
+
 import {
   useFonts,
   Jost_400Regular,
@@ -7,24 +7,17 @@ import {
 } from "@expo-google-fonts/jost";
 import AppLoading from "expo-app-loading";
 
+import Routes from "./src/routes";
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Jost_400Regular,
     Jost_600SemiBold,
   });
 
-  return (
-    <View style={styles.container}>
-      {fontsLoaded ? <Welcome /> : <AppLoading />}
-    </View>
-  );
-}
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-});
+  return <Routes />;
+}
