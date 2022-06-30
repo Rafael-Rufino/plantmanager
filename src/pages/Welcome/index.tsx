@@ -12,8 +12,14 @@ import wateringImg from "../../assets/watering.png";
 
 import { styles } from "./styles";
 import colors from "../../../styles/colors";
+import { useNavigation } from "@react-navigation/core";
 
 export function Welcome() {
+  const navigation = useNavigation();
+
+  function handleStart() {
+    navigation.navigate("UserIdentification");
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.wrapper}>
@@ -28,7 +34,11 @@ export function Welcome() {
           plantas. Nós cuidamos de lembrar você{"\n"}
           sempre que precisar.
         </Text>
-        <TouchableOpacity activeOpacity={0.8} style={styles.buttonIcon}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          style={styles.buttonIcon}
+          onPress={handleStart}
+        >
           <Text style={styles.buttonText}>
             <Feather name="chevron-right" size={24} color={colors.white} />
           </Text>
