@@ -1,28 +1,48 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import fonts from "../../../styles/fonts";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  wrapper: {
+    flex: 1,
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",
     color: colors.heading,
-    marginBottom: 38,
+    fontFamily: fonts.heading,
+    lineHeight: 34,
+    marginTop: 38,
   },
   subtitle: {
     fontSize: 18,
     textAlign: "center",
     paddingHorizontal: 20,
     color: colors.heading,
+    fontFamily: fonts.text,
   },
 
   image: {
-    width: 292,
-    height: 284,
+    width: Dimensions.get("window").width * 0.7,
+  },
+  buttonIcon: {
+    backgroundColor: colors.green,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 16,
+    marginBottom: 10,
+    width: 56,
+    height: 56,
+  },
+  buttonText: {
+    fontSize: 24,
+    color: colors.white,
   },
 });

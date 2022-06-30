@@ -1,25 +1,39 @@
 import React from "react";
-
-import { Text, SafeAreaView, Image, TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
+import {
+  Text,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import wateringImg from "../../assets/watering.png";
-import { Button } from "../../components/Button";
+
 import { styles } from "./styles";
+import colors from "../../../styles/colors";
 
 export function Welcome() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>
-        Gerencie{"\n"}
-        suas plantas{"\n"}
-        de forma fácil
-      </Text>
-      <Image source={wateringImg} style={styles.image} />
-      <Text style={styles.subtitle}>
-        Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
-        sempre que precisar.
-      </Text>
-      <Button title=">" />
+      <View style={styles.wrapper}>
+        <Text style={styles.title}>
+          Gerencie{"\n"}
+          suas plantas de{"\n"}
+          forma fácil
+        </Text>
+        <Image source={wateringImg} style={styles.image} resizeMode="contain" />
+        <Text style={styles.subtitle}>
+          Não esqueça mais de regar suas{"\n"}
+          plantas. Nós cuidamos de lembrar você{"\n"}
+          sempre que precisar.
+        </Text>
+        <TouchableOpacity activeOpacity={0.8} style={styles.buttonIcon}>
+          <Text style={styles.buttonText}>
+            <Feather name="chevron-right" size={24} color={colors.white} />
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
