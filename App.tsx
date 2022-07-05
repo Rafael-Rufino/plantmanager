@@ -1,5 +1,5 @@
-import React from "react";
-import * as Notifications from "expo-notifications";
+import React, { useEffect } from "react";
+
 import Routes from "./src/routes";
 
 import {
@@ -14,6 +14,13 @@ export default function App() {
     Jost_400Regular,
     Jost_600SemiBold,
   });
+
+  // useEffect(() => {
+  //   async function notifications() {
+  //     await Notifications.cancelAllScheduledNotificationsAsync();
+  //   }
+  //   notifications();
+  // }, []);
 
   // useEffect(() => {
   //   const subscription = Notifications.addNotificationReceivedListener(
