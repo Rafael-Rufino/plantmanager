@@ -46,9 +46,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - Utilizando Notificação
 - Listagem de dados
 - Animações
-- Scroll Infinito
+- Scroll Infinito - Paginação
 - TabNavegation
 - Filtro de dados da api
+
 
 
 ## :heavy_check_mark: :iphone: Versão Desktop e Mobile
